@@ -12,6 +12,7 @@
 		4C251AD81E2B3CB900346DFA /* ListIssuesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C251AD71E2B3CB900346DFA /* ListIssuesUITests.swift */; };
 		4C251ADB1E2B402500346DFA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C251AD91E2B402500346DFA /* Main.storyboard */; };
 		4C251ADC1E2B402500346DFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C251ADA1E2B402500346DFA /* LaunchScreen.storyboard */; };
+		4C251ADF1E2B4A3D00346DFA /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C251ADE1E2B4A3D00346DFA /* Issue.swift */; };
 		4C38CEE11E2B377D00A59D9C /* GSMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38CED71E2B377D00A59D9C /* GSMessages.framework */; };
 		4C38CEE21E2B377D00A59D9C /* IGListKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38CED81E2B377D00A59D9C /* IGListKit.framework */; };
 		4C38CEE31E2B377D00A59D9C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38CED91E2B377D00A59D9C /* ObjectMapper.framework */; };
@@ -53,6 +54,7 @@
 		4C251AD71E2B3CB900346DFA /* ListIssuesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesUITests.swift; path = Scenes/ListIssuesUITests.swift; sourceTree = "<group>"; };
 		4C251AD91E2B402500346DFA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Storyboards/Main.storyboard; sourceTree = "<group>"; };
 		4C251ADA1E2B402500346DFA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Storyboards/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C251ADE1E2B4A3D00346DFA /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Issue.swift; path = Models/Issue.swift; sourceTree = "<group>"; };
 		4C38CED71E2B377D00A59D9C /* GSMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GSMessages.framework; path = Carthage/Build/iOS/GSMessages.framework; sourceTree = "<group>"; };
 		4C38CED81E2B377D00A59D9C /* IGListKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IGListKit.framework; path = Carthage/Build/iOS/IGListKit.framework; sourceTree = "<group>"; };
 		4C38CED91E2B377D00A59D9C /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			name = Scenes;
 			sourceTree = "<group>";
 		};
+		4C251ADD1E2B4A2C00346DFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4C251ADE1E2B4A3D00346DFA /* Issue.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4C38CED61E2B377D00A59D9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +201,7 @@
 		4C8A1F651E2B333300F4F1B5 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				4C251ADD1E2B4A2C00346DFA /* Models */,
 				4C251AD01E2B3B5700346DFA /* Storyboards */,
 				4C251ACF1E2B3B5200346DFA /* Scenes */,
 				4C8A1F661E2B333300F4F1B5 /* AppDelegate.swift */,
@@ -400,6 +411,7 @@
 			files = (
 				4C251AD51E2B3C3A00346DFA /* ListIssuesViewController.swift in Sources */,
 				4C8A1F671E2B333300F4F1B5 /* AppDelegate.swift in Sources */,
+				4C251ADF1E2B4A3D00346DFA /* Issue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
