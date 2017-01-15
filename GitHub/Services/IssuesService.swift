@@ -22,33 +22,24 @@ struct FetchIssues {
         var userName: String
         var repo: String
     }
-    
-    struct Response: Mappable {
-        var issues: [Issue]?
-        
-        init?(map: Map) {}
-        mutating func mapping(map: Map) {
-            issues <- map["issues"]
-        }
-    }
 }
 
 class IssuesService: IssuesServiceProtocol {
     func fetchIssues(request: FetchIssues.Request) -> Observable<[Issue]> {
         return Observable.create({ (observer) -> Disposable in
-            let request = Alamofire
-                .request(IssuesRouter.fetchIssues(request: request))
-                .responseObject { (response: DataResponse<FetchIssues.Response>) in
-                    switch response.result {
-                    case .success(let success):
-                        if let issues = success.issues {
-                            observer.onNext(issues)
-                            observer.onCompleted()
-                        }
-                    case .failure(let error):
-                        observer.onError(error)
+            let request = Alamofire.request(IssuesRouter.fetchIssues(request: request)).responseJSON(completionHandler: { (response) in
+                
+                switch response.result {
+                case .success:
+                    if let json = response.result.value as? [[String: Any]],
+                        let issues = Mapper<Issue>().mapArray(JSONArray: json) {
+                        observer.onNext(issues)
+                        observer.onCompleted()
                     }
-            }
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            })
             
             return Disposables.create{
                 request.cancel()
