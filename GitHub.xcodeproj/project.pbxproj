@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C19B2DE1E2B4FA8009B8D0E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C19B2DD1E2B4FA8009B8D0E /* Alamofire.framework */; };
 		4C19B2E01E2B5010009B8D0E /* IssuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19B2DF1E2B5010009B8D0E /* IssuesRouter.swift */; };
+		4C19B2E21E2B5527009B8D0E /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C19B2E11E2B5527009B8D0E /* AlamofireObjectMapper.framework */; };
 		4C251AD21E2B3B9900346DFA /* ListIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C251AD11E2B3B9900346DFA /* ListIssues.storyboard */; };
 		4C251AD51E2B3C3A00346DFA /* ListIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */; };
 		4C251AD81E2B3CB900346DFA /* ListIssuesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C251AD71E2B3CB900346DFA /* ListIssuesUITests.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		4C19B2DD1E2B4FA8009B8D0E /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		4C19B2DF1E2B5010009B8D0E /* IssuesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssuesRouter.swift; path = Routers/IssuesRouter.swift; sourceTree = "<group>"; };
+		4C19B2E11E2B5527009B8D0E /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireObjectMapper.framework; path = Carthage/Build/iOS/AlamofireObjectMapper.framework; sourceTree = "<group>"; };
 		4C251AD11E2B3B9900346DFA /* ListIssues.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ListIssues.storyboard; path = Storyboards/ListIssues.storyboard; sourceTree = "<group>"; };
 		4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesViewController.swift; path = Scenes/ListIssues/ListIssuesViewController.swift; sourceTree = "<group>"; };
 		4C251AD71E2B3CB900346DFA /* ListIssuesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesUITests.swift; path = Scenes/ListIssuesUITests.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C19B2DE1E2B4FA8009B8D0E /* Alamofire.framework in Frameworks */,
+				4C19B2E21E2B5527009B8D0E /* AlamofireObjectMapper.framework in Frameworks */,
 				4C38CEE11E2B377D00A59D9C /* GSMessages.framework in Frameworks */,
 				4C38CEE21E2B377D00A59D9C /* IGListKit.framework in Frameworks */,
 				4C38CEE31E2B377D00A59D9C /* ObjectMapper.framework in Frameworks */,
@@ -191,6 +194,7 @@
 		4C38CED61E2B377D00A59D9C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C19B2E11E2B5527009B8D0E /* AlamofireObjectMapper.framework */,
 				4C19B2DD1E2B4FA8009B8D0E /* Alamofire.framework */,
 				4C38CEEC1E2B384200A59D9C /* Nimble.framework */,
 				4C38CEED1E2B384200A59D9C /* Quick.framework */,
@@ -415,6 +419,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
 			);
 			outputPaths = (
 			);

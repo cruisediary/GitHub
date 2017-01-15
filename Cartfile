@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" ~> 4.0
+github "tristanhimmelman/AlamofireObjectMapper" ~> 4.0 
 github "wxxsw/GSMessages"
 github "realm/realm-cocoa"
 github "Skyscanner/SkyFloatingLabelTextField"
