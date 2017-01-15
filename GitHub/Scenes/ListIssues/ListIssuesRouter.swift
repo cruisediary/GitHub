@@ -12,6 +12,12 @@ protocol ListIssuesRouterInput {
     func navigateToShowIssueScene()
 }
 
+extension ListIssuesViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router.passDataToNextScene(segue)
+    }
+}
+
 protocol ListIssuesRouterDataSource: class {
     var id: Int { get }
 }

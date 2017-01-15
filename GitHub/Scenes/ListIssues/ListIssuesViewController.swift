@@ -17,7 +17,12 @@ extension ListIssuesViewController: ListIssuesRouterDataDestination {}
 class ListIssuesViewController: UIViewController {
     var router: ListIssuesRouter!
     
-    var id: Int = -1
+    var id: Int = -1 {
+        didSet {
+            guard id != -1 else { return }
+            router.navigateToShowIssueScene()
+        }
+    }
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -90,6 +95,13 @@ class ListIssuesViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+}
+
+extension ListIssuesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard indexPath.item < issues.count, let id = issues[indexPath.item].id else { return }
+        self.id = id
     }
 }
 
