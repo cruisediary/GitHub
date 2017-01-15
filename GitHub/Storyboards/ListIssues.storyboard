@@ -55,11 +55,20 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="GNt-Ha-TUQ" id="ahS-Rn-hLx"/>
+                        <segue destination="e4A-zo-zif" kind="show" identifier="ShowIssueScene" id="Ff4-dP-maG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNY-IZ-3K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-505" y="-490"/>
+        </scene>
+        <!--ShowIssueViewController-->
+        <scene sceneID="nvu-WZ-iPX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShowIssue" referencedIdentifier="ShowIssueViewController" id="e4A-zo-zif" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azb-gg-pNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-491"/>
         </scene>
     </scenes>
 </document>
