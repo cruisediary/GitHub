@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ListIssueCell" customModule="GitHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="313" height="64"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="313" height="64"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MTr-wr-kMX">
+                        <rect key="frame" x="15" y="8" width="259.5" height="46"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cruisediary/GitHub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqK-so-Fp8">
+                                <rect key="frame" x="0.0" y="0.0" width="259.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.23137254900000001" green="0.23137254900000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="feature: Issue 목록 조회" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-xJ-qj6">
+                                <rect key="frame" x="0.0" y="17" width="259.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opened by cruisediary about 22 10 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-Ca-U5h">
+                                <rect key="frame" x="0.0" y="34" width="259.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wqK-so-Fp8" secondAttribute="trailing" id="3K7-DU-Hct"/>
+                            <constraint firstItem="fwB-Ca-U5h" firstAttribute="leading" secondItem="MTr-wr-kMX" secondAttribute="leading" id="Bh5-1l-y2l"/>
+                            <constraint firstItem="wqK-so-Fp8" firstAttribute="leading" secondItem="MTr-wr-kMX" secondAttribute="leading" id="Boa-bo-tf2"/>
+                            <constraint firstItem="gcx-xJ-qj6" firstAttribute="leading" secondItem="MTr-wr-kMX" secondAttribute="leading" id="JaC-2e-PFq"/>
+                            <constraint firstAttribute="trailing" secondItem="fwB-Ca-U5h" secondAttribute="trailing" id="rVl-Np-E0e"/>
+                            <constraint firstAttribute="trailing" secondItem="gcx-xJ-qj6" secondAttribute="trailing" id="xkn-fW-VBI"/>
+                        </constraints>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEh-Hh-Isc">
+                        <rect key="frame" x="280.5" y="8" width="17.5" height="12"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.41176470590000003" green="0.41176470590000003" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="MTr-wr-kMX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="3tF-Wd-2AT"/>
+                <constraint firstItem="JEh-Hh-Isc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Kux-Cs-BEV"/>
+                <constraint firstAttribute="trailing" secondItem="JEh-Hh-Isc" secondAttribute="trailing" constant="15" id="T7l-Zz-gOC"/>
+                <constraint firstItem="JEh-Hh-Isc" firstAttribute="leading" secondItem="MTr-wr-kMX" secondAttribute="trailing" constant="6" id="Z3w-TZ-zDU"/>
+                <constraint firstItem="MTr-wr-kMX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="sEv-WB-IaM"/>
+            </constraints>
+            <size key="customSize" width="313" height="64"/>
+            <connections>
+                <outlet property="issueNumberLabel" destination="JEh-Hh-Isc" id="TRA-pM-nQ9"/>
+                <outlet property="opendInfoLabel" destination="fwB-Ca-U5h" id="F6H-A6-iCO"/>
+                <outlet property="repoLabel" destination="wqK-so-Fp8" id="9cA-kA-dUK"/>
+                <outlet property="titleLabel" destination="gcx-xJ-qj6" id="Ddd-Fu-HoP"/>
+            </connections>
+            <point key="canvasLocation" x="30.5" y="46"/>
+        </collectionViewCell>
+    </objects>
+</document>
