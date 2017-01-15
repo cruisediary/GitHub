@@ -15,7 +15,7 @@ class ListIssueCell: UICollectionViewCell {
 
     @IBOutlet weak var repoLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var opendInfoLabel: UILabel!
+    @IBOutlet weak var openedInfoLabel: UILabel!
     @IBOutlet weak var issueNumberLabel: UILabel!
     
     func configure(issue: Issue) {
@@ -23,6 +23,7 @@ class ListIssueCell: UICollectionViewCell {
         repoLabel.text = issue.url
         titleLabel.text = issue.title
         issueNumberLabel.text = "#\(number)"
+        openedInfoLabel.text = issue.openedInfo
     }
 
     override func awakeFromNib() {

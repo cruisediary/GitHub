@@ -67,7 +67,7 @@
             <size key="customSize" width="313" height="64"/>
             <connections>
                 <outlet property="issueNumberLabel" destination="JEh-Hh-Isc" id="TRA-pM-nQ9"/>
-                <outlet property="opendInfoLabel" destination="fwB-Ca-U5h" id="F6H-A6-iCO"/>
+                <outlet property="openedInfoLabel" destination="fwB-Ca-U5h" id="uGP-c2-XUQ"/>
                 <outlet property="repoLabel" destination="wqK-so-Fp8" id="9cA-kA-dUK"/>
                 <outlet property="titleLabel" destination="gcx-xJ-qj6" id="Ddd-Fu-HoP"/>
             </connections>
