@@ -13,6 +13,8 @@
 		4C19B2E41E2B557B009B8D0E /* IssuesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19B2E31E2B557B009B8D0E /* IssuesWorker.swift */; };
 		4C19B2E91E2B58FE009B8D0E /* ListIssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19B2E71E2B58FE009B8D0E /* ListIssueCell.swift */; };
 		4C19B2EA1E2B58FE009B8D0E /* ListIssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C19B2E81E2B58FE009B8D0E /* ListIssueCell.xib */; };
+		4C19B2EB1E2B6450009B8D0E /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38CED91E2B377D00A59D9C /* ObjectMapper.framework */; };
+		4C19B2EE1E2B69DF009B8D0E /* ListIssuesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C19B2ED1E2B69DF009B8D0E /* ListIssuesViewControllerTests.swift */; };
 		4C251AD21E2B3B9900346DFA /* ListIssues.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C251AD11E2B3B9900346DFA /* ListIssues.storyboard */; };
 		4C251AD51E2B3C3A00346DFA /* ListIssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */; };
 		4C251AD81E2B3CB900346DFA /* ListIssuesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C251AD71E2B3CB900346DFA /* ListIssuesUITests.swift */; };
@@ -61,6 +63,7 @@
 		4C19B2E31E2B557B009B8D0E /* IssuesWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = IssuesWorker.swift; path = Workers/IssuesWorker.swift; sourceTree = "<group>"; };
 		4C19B2E71E2B58FE009B8D0E /* ListIssueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssueCell.swift; path = Views/UICollectionViews/ListIssueCell.swift; sourceTree = "<group>"; };
 		4C19B2E81E2B58FE009B8D0E /* ListIssueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ListIssueCell.xib; path = Views/UICollectionViews/ListIssueCell.xib; sourceTree = "<group>"; };
+		4C19B2ED1E2B69DF009B8D0E /* ListIssuesViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesViewControllerTests.swift; path = Scenes/ListIssuesViewControllerTests.swift; sourceTree = "<group>"; };
 		4C251AD11E2B3B9900346DFA /* ListIssues.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ListIssues.storyboard; path = Storyboards/ListIssues.storyboard; sourceTree = "<group>"; };
 		4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesViewController.swift; path = Scenes/ListIssues/ListIssuesViewController.swift; sourceTree = "<group>"; };
 		4C251AD71E2B3CB900346DFA /* ListIssuesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesUITests.swift; path = Scenes/ListIssuesUITests.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 				4C38CEE71E2B377D00A59D9C /* RxDataSources.framework in Frameworks */,
 				4C38CEE81E2B377D00A59D9C /* RxOptional.framework in Frameworks */,
 				4C38CEE91E2B377D00A59D9C /* RxSwift.framework in Frameworks */,
+				4C19B2EB1E2B6450009B8D0E /* ObjectMapper.framework in Frameworks */,
 				4C38CEEA1E2B377D00A59D9C /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +149,14 @@
 				4C19B2E81E2B58FE009B8D0E /* ListIssueCell.xib */,
 			);
 			name = UICollectionViewCells;
+			sourceTree = "<group>";
+		};
+		4C19B2EC1E2B69C8009B8D0E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4C19B2ED1E2B69DF009B8D0E /* ListIssuesViewControllerTests.swift */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 		4C251ACF1E2B3B5200346DFA /* Scenes */ = {
@@ -276,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8A1F7B1E2B333300F4F1B5 /* GitHubTests.swift */,
+				4C19B2EC1E2B69C8009B8D0E /* Scenes */,
 				4C8A1F7D1E2B333300F4F1B5 /* Info.plist */,
 			);
 			path = GitHubTests;
@@ -427,7 +440,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		4C38CEEB1E2B379C00A59D9C /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -443,6 +456,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireObjectMapper.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
 			);
 			outputPaths = (
 			);
@@ -486,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C19B2EE1E2B69DF009B8D0E /* ListIssuesViewControllerTests.swift in Sources */,
 				4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
