@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct ShowIssueModel {
+struct ShowIssue {
     struct Request {
         var userName: String
         var repo: String
