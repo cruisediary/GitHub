@@ -14,13 +14,14 @@ extension Date {
     
     var relativeTime: String {
         let timeInterval = Date().timeIntervalSince(self)
+        
         if timeInterval < 60 {
             return "\(Int(timeInterval)) seconds ago"
         } else if timeInterval < 3600 {
             return "\(Int(timeInterval/60)) minutes ago"
         } else if timeInterval < 24 * 3600 {
             return "\(Int(timeInterval/3600)) hours ago"
-        } else if Int(timeInterval) == 1 {
+        } else if Int(timeInterval/(24 * 3600)) == 1 {
             return "1 day ago"
         } else {
             return "\(Int(timeInterval/(24 * 3600))) days ago"
