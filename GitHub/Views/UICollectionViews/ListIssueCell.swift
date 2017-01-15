@@ -19,11 +19,12 @@ class ListIssueCell: UICollectionViewCell {
     @IBOutlet weak var issueNumberLabel: UILabel!
     
     func configure(issue: Issue) {
+        guard let number = issue.number else { return }
         repoLabel.text = issue.url
         titleLabel.text = issue.title
-        issueNumberLabel.text = "\(issue.number)"
+        issueNumberLabel.text = "#\(number)"
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
