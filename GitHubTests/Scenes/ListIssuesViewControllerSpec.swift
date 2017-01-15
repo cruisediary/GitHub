@@ -12,7 +12,7 @@ import Quick
 import Nimble
 
 @testable import GitHub
-class ListIssuesViewControllerTests: QuickSpec {
+class ListIssuesViewControllerSpec: QuickSpec {
     
     override func spec() {
         var sut: ListIssuesViewController!
