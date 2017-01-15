@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oce-Nw-IfD">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--List Issues View Controller-->
+        <scene sceneID="Eag-so-cOP">
+            <objects>
+                <viewController storyboardIdentifier="ListIssuesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oce-Nw-IfD" customClass="ListIssuesViewController" customModule="GitHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R9T-D5-P83"/>
+                        <viewControllerLayoutGuide type="bottom" id="EO1-Nn-L6f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZnF-gG-0o2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GNt-Ha-TUQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N0t-LX-CnO">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nzY-pk-lA8">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="oce-Nw-IfD" id="4lU-lY-3KS"/>
+                                    <outlet property="delegate" destination="oce-Nw-IfD" id="2Gy-A9-dTC"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GNt-Ha-TUQ" firstAttribute="width" secondItem="ZnF-gG-0o2" secondAttribute="width" id="NNg-45-Vv9"/>
+                            <constraint firstItem="GNt-Ha-TUQ" firstAttribute="centerX" secondItem="ZnF-gG-0o2" secondAttribute="centerX" id="lpP-T4-QvF"/>
+                            <constraint firstItem="GNt-Ha-TUQ" firstAttribute="height" secondItem="ZnF-gG-0o2" secondAttribute="height" id="qMI-Ug-ASU"/>
+                            <constraint firstItem="GNt-Ha-TUQ" firstAttribute="centerY" secondItem="ZnF-gG-0o2" secondAttribute="centerY" id="uM0-Ti-rw0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="GNt-Ha-TUQ" id="ahS-Rn-hLx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nNY-IZ-3K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-505" y="-490"/>
+        </scene>
+    </scenes>
+</document>
