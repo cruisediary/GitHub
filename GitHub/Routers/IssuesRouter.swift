@@ -20,13 +20,14 @@ extension IssuesRouter {
         let result: (path: String, method: Alamofire.HTTPMethod, parameters: [String: AnyObject]) = {
             switch self {
             case .fetchIssues(let request):
-                return ("\(request.userName)/\(request.repo)/", .get, [String: AnyObject]())
+                return ("\(request.userName)/\(request.repo)/issues", .get, [String: AnyObject]())
             }
         }()
         
         let url = try IssuesRouter.baseURL.asURL()
         var request = URLRequest(url: url.appendingPathComponent(result.path))
         request.httpMethod = result.method.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         return try URLEncoding.default.encode(request, with: result.parameters)
     }

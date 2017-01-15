@@ -8,6 +8,7 @@
 
 import UIKit
 
+import AlamofireObjectMapper
 import ObjectMapper
 
 struct Issue: Mappable {
