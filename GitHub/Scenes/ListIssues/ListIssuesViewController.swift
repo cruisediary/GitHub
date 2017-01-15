@@ -15,8 +15,8 @@ class ListIssuesViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     struct Constant {
-        static let userName = "cruisediary"
-        static let repo = "GitHub"
+        static let userName = "Instagram"
+        static let repo = "IGListKit"
     }
     
     enum Section {
@@ -88,6 +88,10 @@ extension ListIssuesViewController: UICollectionViewDataSource {
 extension ListIssuesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.width, height: ListIssueCell.height)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
     }
 }
 

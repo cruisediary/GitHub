@@ -17,6 +17,8 @@ struct Issue: Mappable {
     var title: String?
     var state: String?
 
+    init(){}
+    
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {

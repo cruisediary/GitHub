@@ -31,6 +31,28 @@ class ListIssuesViewControllerTests: QuickSpec {
                 expect(sut.collectionView.delegate).toNot(beNil())
                 expect(sut.collectionView.dataSource).toNot(beNil())
             }
+            
+            it("numberOfSections") {
+                expect(sut.collectionView.numberOfSections).to(equal(1))
+            }
+            
+            context("when fetch 10 items") {
+                let expectedNum = 10
+                beforeEach {
+                    sut.issues = IssueSeeder.generate(num: expectedNum)
+                    sut.state = .fetched
+                }
+                
+                it("numberOfItems should be \(expectedNum)") {
+                    expect(sut.collectionView.numberOfItems(inSection: 0)).to(equal(expectedNum))
+                }
+            }
         }
+    }
+}
+
+class IssueSeeder {
+    static func generate(num: Int) -> [Issue] {
+        return (0..<num).map { _ in Issue() }
     }
 }
