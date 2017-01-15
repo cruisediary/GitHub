@@ -22,6 +22,7 @@
                     </activityIndicatorView>
                 </subviews>
             </view>
+            <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Dxa-Dv-cYO" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="1cv-4H-lwp"/>
                 <constraint firstItem="Dxa-Dv-cYO" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="qWh-Ms-gah"/>

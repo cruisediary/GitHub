@@ -41,8 +41,16 @@ class ListIssuesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(UINib(nibName: ListIssueCell.nibName, bundle: nil), forCellWithReuseIdentifier: ListIssueCell.reuseIdentifier)
+        
+        registerUINibs()
+        
+        state = .fetching
         // Do any additional setup after loading the view.
+    }
+    
+    func registerUINibs() {
+        collectionView.register(UINib(nibName: IndicatorCell.nibName, bundle: nil), forCellWithReuseIdentifier: IndicatorCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: ListIssueCell.nibName, bundle: nil), forCellWithReuseIdentifier: ListIssueCell.reuseIdentifier)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,9 +79,15 @@ class ListIssuesViewController: UIViewController {
 
 extension ListIssuesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListIssueCell.reuseIdentifier, for: indexPath) as! ListIssueCell
-        cell.configure(issue: issues[indexPath.item])
-        return cell
+        switch state {
+        case .fetching:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IndicatorCell.reuseIdentifier, for: indexPath) as! IndicatorCell
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListIssueCell.reuseIdentifier, for: indexPath) as! ListIssueCell
+            cell.configure(issue: issues[indexPath.item])
+            return cell
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -81,13 +95,19 @@ extension ListIssuesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return issues.count
+        switch state {
+        case .fetching, .networkError: return 1
+        case .fetched: return issues.count
+        }
     }
 }
 
 extension ListIssuesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.width, height: ListIssueCell.height)
+        switch state {
+        case .fetching, .networkError: return collectionView.bounds.size
+        case .fetched: return CGSize(width: collectionView.width, height: ListIssueCell.height)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
