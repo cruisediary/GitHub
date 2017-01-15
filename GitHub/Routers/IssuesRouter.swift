@@ -12,6 +12,7 @@ import Alamofire
 
 enum IssuesRouter: URLRequestConvertible {
     static let baseURL = "https://api.github.com/repos/"
+    case fetchIssue(request: FetchIssue.Request)
     case fetchIssues(request: FetchIssues.Request)
 }
 

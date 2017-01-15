@@ -44,6 +44,8 @@
 		4C7BB4C51E2BB7D600F8BD63 /* ShowIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C41E2BB7D600F8BD63 /* ShowIssue.storyboard */; };
 		4C7BB4C71E2BB93900F8BD63 /* ListIssuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */; };
 		4C7BB4C91E2BBB4600F8BD63 /* ShowIssueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C81E2BBB4600F8BD63 /* ShowIssueRouter.swift */; };
+		4C7BB4CB1E2BC1AB00F8BD63 /* ListIssuesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4CA1E2BC1AB00F8BD63 /* ListIssuesModel.swift */; };
+		4C7BB4CD1E2BC1D700F8BD63 /* ShowIssueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4CC1E2BC1D700F8BD63 /* ShowIssueModel.swift */; };
 		4C8A1F671E2B333300F4F1B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F661E2B333300F4F1B5 /* AppDelegate.swift */; };
 		4C8A1F6E1E2B333300F4F1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A1F6D1E2B333300F4F1B5 /* Assets.xcassets */; };
 		4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F7B1E2B333300F4F1B5 /* GitHubTests.swift */; };
@@ -104,6 +106,8 @@
 		4C7BB4C41E2BB7D600F8BD63 /* ShowIssue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShowIssue.storyboard; path = Storyboards/ShowIssue.storyboard; sourceTree = "<group>"; };
 		4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesRouter.swift; path = Scenes/ListIssues/ListIssuesRouter.swift; sourceTree = "<group>"; };
 		4C7BB4C81E2BBB4600F8BD63 /* ShowIssueRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssueRouter.swift; path = Scenes/ShowIssue/ShowIssueRouter.swift; sourceTree = "<group>"; };
+		4C7BB4CA1E2BC1AB00F8BD63 /* ListIssuesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesModel.swift; path = Scenes/ListIssues/ListIssuesModel.swift; sourceTree = "<group>"; };
+		4C7BB4CC1E2BC1D700F8BD63 /* ShowIssueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssueModel.swift; path = Scenes/ShowIssue/ShowIssueModel.swift; sourceTree = "<group>"; };
 		4C8A1F631E2B333300F4F1B5 /* GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8A1F661E2B333300F4F1B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8A1F6D1E2B333300F4F1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 			children = (
 				4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */,
 				4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */,
+				4C7BB4CA1E2BC1AB00F8BD63 /* ListIssuesModel.swift */,
 			);
 			name = ListIssues;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			children = (
 				4C7BB4C21E2BB7C200F8BD63 /* ShowIssueViewController.swift */,
 				4C7BB4C81E2BBB4600F8BD63 /* ShowIssueRouter.swift */,
+				4C7BB4CC1E2BC1D700F8BD63 /* ShowIssueModel.swift */,
 			);
 			name = ShowIssue;
 			sourceTree = "<group>";
@@ -548,6 +554,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C251AD51E2B3C3A00346DFA /* ListIssuesViewController.swift in Sources */,
+				4C7BB4CD1E2BC1D700F8BD63 /* ShowIssueModel.swift in Sources */,
 				4C8A1F671E2B333300F4F1B5 /* AppDelegate.swift in Sources */,
 				4C251ADF1E2B4A3D00346DFA /* Issue.swift in Sources */,
 				4C7BB4C31E2BB7C200F8BD63 /* ShowIssueViewController.swift in Sources */,
@@ -558,6 +565,7 @@
 				4C251AE41E2B4B7800346DFA /* IssuesService.swift in Sources */,
 				4C19B2F71E2B78E4009B8D0E /* DateHelper.swift in Sources */,
 				4C19B2FA1E2B7A95009B8D0E /* IndicatorCell.swift in Sources */,
+				4C7BB4CB1E2BC1AB00F8BD63 /* ListIssuesModel.swift in Sources */,
 				4C19B2E01E2B5010009B8D0E /* IssuesRouter.swift in Sources */,
 				4C19B2E91E2B58FE009B8D0E /* ListIssueCell.swift in Sources */,
 			);
