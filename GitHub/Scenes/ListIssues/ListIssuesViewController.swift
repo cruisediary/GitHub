@@ -26,7 +26,7 @@ class ListIssuesViewController: UIViewController {
     enum State {
         case fetching
         case fetched
-        case networkdError
+        case networkError
     }
     
     let disposeBag: DisposeBag = DisposeBag()
@@ -48,7 +48,7 @@ class ListIssuesViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         switch state {
-        case .fetching, .networkdError: fetchIssues()
+        case .fetching, .networkError: fetchIssues()
         case .fetched: break
         }
     }
