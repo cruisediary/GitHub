@@ -1,0 +1,12 @@
+github "wxxsw/GSMessages"
+github "realm/realm-cocoa"
+github "Skyscanner/SkyFloatingLabelTextField"
+github "ReactiveX/RxSwift" ~> 3.0
+github "RxSwiftCommunity/RxOptional" ~> 3.1.1
+github "RxSwiftCommunity/RxDataSources" ~> 1.0
+github "Quick/Quick" "v0.10.0"
+github "Quick/Nimble" "v5.1.1"
+github "delba/TextAttributes"
+github "Hearst-DD/ObjectMapper" ~> 2.2
+github "Instagram/IGListKit" ~> 2.0.0
+github "SwiftyJSON/SwiftyJSON"
