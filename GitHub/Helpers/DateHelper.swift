@@ -20,6 +20,8 @@ extension Date {
             return "\(Int(timeInterval/60)) minutes ago"
         } else if timeInterval < 24 * 3600 {
             return "\(Int(timeInterval/3600)) hours ago"
+        } else if Int(timeInterval) == 1 {
+            return "1 day ago"
         } else {
             return "\(Int(timeInterval/(24 * 3600))) days ago"
         }

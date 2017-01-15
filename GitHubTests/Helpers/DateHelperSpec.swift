@@ -50,6 +50,17 @@ class DateHelperSpec: QuickSpec {
                     expect(date.relativeTime).to(equal(expectedString))
                 }
             }
+            
+            context("when 1 day ago") {
+                let expectedString = "1 day ago"
+                beforeEach {
+                    date = Date() - 1.days
+                }
+                
+                it("should equal to '1 day ago") {
+                    expect(date.relativeTime).to(equal(expectedString))
+                }
+            }
         }
     }
 }

@@ -42,6 +42,6 @@ struct Issue: Mappable {
 extension Issue {
     var openedInfo: String? {
         guard let userName = user?.login, let createdAt = createdAt else { return nil }
-        return "Opened by \(userName) about \(createdAt)"
+        return "Opened by \(userName) about \(createdAt.relativeTime)"
     }
 }
