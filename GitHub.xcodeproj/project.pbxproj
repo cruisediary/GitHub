@@ -42,6 +42,8 @@
 		4C38CEEF1E2B384200A59D9C /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38CEED1E2B384200A59D9C /* Quick.framework */; };
 		4C7BB4C31E2BB7C200F8BD63 /* ShowIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C21E2BB7C200F8BD63 /* ShowIssueViewController.swift */; };
 		4C7BB4C51E2BB7D600F8BD63 /* ShowIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C41E2BB7D600F8BD63 /* ShowIssue.storyboard */; };
+		4C7BB4C71E2BB93900F8BD63 /* ListIssuesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */; };
+		4C7BB4C91E2BBB4600F8BD63 /* ShowIssueRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7BB4C81E2BBB4600F8BD63 /* ShowIssueRouter.swift */; };
 		4C8A1F671E2B333300F4F1B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F661E2B333300F4F1B5 /* AppDelegate.swift */; };
 		4C8A1F6E1E2B333300F4F1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A1F6D1E2B333300F4F1B5 /* Assets.xcassets */; };
 		4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F7B1E2B333300F4F1B5 /* GitHubTests.swift */; };
@@ -100,6 +102,8 @@
 		4C38CEED1E2B384200A59D9C /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		4C7BB4C21E2BB7C200F8BD63 /* ShowIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssueViewController.swift; path = Scenes/ShowIssue/ShowIssueViewController.swift; sourceTree = "<group>"; };
 		4C7BB4C41E2BB7D600F8BD63 /* ShowIssue.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ShowIssue.storyboard; path = Storyboards/ShowIssue.storyboard; sourceTree = "<group>"; };
+		4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesRouter.swift; path = Scenes/ListIssues/ListIssuesRouter.swift; sourceTree = "<group>"; };
+		4C7BB4C81E2BBB4600F8BD63 /* ShowIssueRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssueRouter.swift; path = Scenes/ShowIssue/ShowIssueRouter.swift; sourceTree = "<group>"; };
 		4C8A1F631E2B333300F4F1B5 /* GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8A1F661E2B333300F4F1B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8A1F6D1E2B333300F4F1B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */,
+				4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */,
 			);
 			name = ListIssues;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 			isa = PBXGroup;
 			children = (
 				4C7BB4C21E2BB7C200F8BD63 /* ShowIssueViewController.swift */,
+				4C7BB4C81E2BBB4600F8BD63 /* ShowIssueRouter.swift */,
 			);
 			name = ShowIssue;
 			sourceTree = "<group>";
@@ -546,7 +552,9 @@
 				4C251ADF1E2B4A3D00346DFA /* Issue.swift in Sources */,
 				4C7BB4C31E2BB7C200F8BD63 /* ShowIssueViewController.swift in Sources */,
 				4C19B2E41E2B557B009B8D0E /* IssuesWorker.swift in Sources */,
+				4C7BB4C91E2BBB4600F8BD63 /* ShowIssueRouter.swift in Sources */,
 				4C19B2F01E2B70B9009B8D0E /* User.swift in Sources */,
+				4C7BB4C71E2BB93900F8BD63 /* ListIssuesRouter.swift in Sources */,
 				4C251AE41E2B4B7800346DFA /* IssuesService.swift in Sources */,
 				4C19B2F71E2B78E4009B8D0E /* DateHelper.swift in Sources */,
 				4C19B2FA1E2B7A95009B8D0E /* IndicatorCell.swift in Sources */,

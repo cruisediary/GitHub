@@ -10,8 +10,15 @@ import UIKit
 
 import RxSwift
 
-class ListIssuesViewController: UIViewController {
+extension ListIssuesViewController: ListIssuesRouterDataSource {}
 
+extension ListIssuesViewController: ListIssuesRouterDataDestination {}
+
+class ListIssuesViewController: UIViewController {
+    var router: ListIssuesRouter!
+    
+    var id: Int = -1
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     struct Constant {
@@ -39,6 +46,11 @@ class ListIssuesViewController: UIViewController {
     
     var issues: [Issue] = []
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        router = ListIssuesRouter(viewController: self, dataSource: self, dataDestination: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

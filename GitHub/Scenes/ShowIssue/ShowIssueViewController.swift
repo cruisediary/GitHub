@@ -8,8 +8,20 @@
 
 import UIKit
 
-class ShowIssueViewController: UIViewController {
+extension ShowIssueViewController: ShowIssueRouterDataSource {}
 
+extension ShowIssueViewController: ShowIssueRouterDataDestination {}
+
+class ShowIssueViewController: UIViewController {
+    static let segue = "ShowIssueScene"
+    var router: ShowIssueRouter!
+    var id: Int = -1
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        router = ShowIssueRouter(viewController: self, dataSource: self, dataDestination: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
