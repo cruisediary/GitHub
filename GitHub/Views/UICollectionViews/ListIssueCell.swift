@@ -30,5 +30,4 @@ class ListIssueCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }
