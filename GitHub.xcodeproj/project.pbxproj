@@ -55,6 +55,7 @@
 		4CA242531E3B483100BC0BEC /* ListIssuesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA242521E3B483100BC0BEC /* ListIssuesViewControllerSpec.swift */; };
 		4CA242551E3B483A00BC0BEC /* ShowIssueViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA242541E3B483A00BC0BEC /* ShowIssueViewControllerSpec.swift */; };
 		4CA242571E3B484C00BC0BEC /* CollectionHelperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA242561E3B484C00BC0BEC /* CollectionHelperSpec.swift */; };
+		4CA242591E3B4B4B00BC0BEC /* ListIssuesPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA242581E3B4B4B00BC0BEC /* ListIssuesPresenterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		4CA242521E3B483100BC0BEC /* ListIssuesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesViewControllerSpec.swift; path = Scenes/ListIssues/ListIssuesViewControllerSpec.swift; sourceTree = "<group>"; };
 		4CA242541E3B483A00BC0BEC /* ShowIssueViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssueViewControllerSpec.swift; path = Scenes/ShowIssue/ShowIssueViewControllerSpec.swift; sourceTree = "<group>"; };
 		4CA242561E3B484C00BC0BEC /* CollectionHelperSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionHelperSpec.swift; path = Helpers/CollectionHelperSpec.swift; sourceTree = "<group>"; };
+		4CA242581E3B4B4B00BC0BEC /* ListIssuesPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesPresenterSpec.swift; path = Scenes/ListIssues/ListIssuesPresenterSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA242521E3B483100BC0BEC /* ListIssuesViewControllerSpec.swift */,
+				4CA242581E3B4B4B00BC0BEC /* ListIssuesPresenterSpec.swift */,
 			);
 			name = ListIssues;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				4CA242551E3B483A00BC0BEC /* ShowIssueViewControllerSpec.swift in Sources */,
 				4CA242531E3B483100BC0BEC /* ListIssuesViewControllerSpec.swift in Sources */,
 				4CA242571E3B484C00BC0BEC /* CollectionHelperSpec.swift in Sources */,
+				4CA242591E3B4B4B00BC0BEC /* ListIssuesPresenterSpec.swift in Sources */,
 				4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */,
 				4C19B3011E2B85E6009B8D0E /* DateHelperSpec.swift in Sources */,
 			);

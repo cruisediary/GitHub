@@ -22,6 +22,7 @@ class ListIssuesPresenter: ListIssuesPresenterInput {
     weak var output: ListIssuesPresenterOutput!
     var id: Int = -1
     let disposeBag: DisposeBag = DisposeBag()
+    var worker: IssuesWorker = IssuesWorker(service: IssuesService())
     
     struct Constant {
         static let userName = "Instagram"
@@ -29,11 +30,14 @@ class ListIssuesPresenter: ListIssuesPresenterInput {
     }
     
     func fetchIssues() {
-        let worker = IssuesWorker(service: IssuesService())
         worker.fetchIssues(request: ListIssues.Request(userName: Constant.userName, repo: Constant.repo))
             .subscribe { [weak self](event) in
                 guard let `self` = self, let issues = event.element else { return }
-                self.output.displayIssues(ListIssues.FetchIssues.ViewModel(issues: issues))
+                self.display(issues: issues)
             }.addDisposableTo(disposeBag)
+    }
+    
+    func display(issues: [Issue]) {
+        output?.displayIssues(ListIssues.FetchIssues.ViewModel(issues: issues))
     }
 }
