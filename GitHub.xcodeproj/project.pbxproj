@@ -50,6 +50,7 @@
 		4C8A1F6E1E2B333300F4F1B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8A1F6D1E2B333300F4F1B5 /* Assets.xcassets */; };
 		4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F7B1E2B333300F4F1B5 /* GitHubTests.swift */; };
 		4C8A1F871E2B333300F4F1B5 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F861E2B333300F4F1B5 /* UITestCase.swift */; };
+		4CA242491E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA242481E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		4C8A1F821E2B333300F4F1B5 /* GitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8A1F861E2B333300F4F1B5 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		4C8A1F881E2B333300F4F1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CA242481E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssuesViewControllerSpec.swift; path = Scenes/ShowIssuesViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				4C19B2ED1E2B69DF009B8D0E /* ListIssuesViewControllerSpec.swift */,
+				4CA242481E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -437,15 +440,18 @@
 				TargetAttributes = {
 					4C8A1F621E2B333300F4F1B5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3YN6YPP3YC;
 						ProvisioningStyle = Automatic;
 					};
 					4C8A1F761E2B333300F4F1B5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3YN6YPP3YC;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4C8A1F621E2B333300F4F1B5;
 					};
 					4C8A1F811E2B333300F4F1B5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 3YN6YPP3YC;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4C8A1F621E2B333300F4F1B5;
 					};
@@ -575,6 +581,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CA242491E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift in Sources */,
 				4C19B2EE1E2B69DF009B8D0E /* ListIssuesViewControllerSpec.swift in Sources */,
 				4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */,
 				4C19B3011E2B85E6009B8D0E /* DateHelperSpec.swift in Sources */,
@@ -646,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -689,7 +696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -701,6 +708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YN6YPP3YC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -718,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YN6YPP3YC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -736,6 +745,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3YN6YPP3YC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -754,6 +764,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 3YN6YPP3YC;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -771,6 +782,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3YN6YPP3YC;
 				INFOPLIST_FILE = GitHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cruz.GitHubUITests;
@@ -784,6 +796,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 3YN6YPP3YC;
 				INFOPLIST_FILE = GitHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cruz.GitHubUITests;
