@@ -16,8 +16,12 @@ import RxSwift
 class ListIssuesPresenterSpec: QuickSpec {
     override func spec() {
         var sut: ListIssuesPresenter!
+        var outputSpy: ListIssuesPresenterOutputSpy!
+        
         beforeEach {
+            outputSpy = ListIssuesPresenterOutputSpy()
             sut = ListIssuesPresenter()
+            sut.output = outputSpy
         }
         
         describe("fetchIssues") {
@@ -33,6 +37,22 @@ class ListIssuesPresenterSpec: QuickSpec {
                 }
             }
         }
+        
+        describe("displayIssues") {
+            context("when fetch 6 issues successfully") {
+                beforeEach {
+                    sut.display(issues: (0...5).map { _ in return Issue() })
+                }
+                
+                it("displayIssues should be called") {
+                    expect(outputSpy.displayIssuesCalled).to(beTrue())
+                }
+                
+                it("displayIssues count should be 6") {
+                    expect(outputSpy.issuesCount).to(equal(6))
+                }
+            }
+        }
     }
 }
 
@@ -41,5 +61,14 @@ fileprivate class IssuesWorkerSpy: IssuesWorker {
     override func fetchIssues(request: ListIssues.Request) -> Observable<[Issue]> {
         self.fetchIssuesCalled = true
         return Observable.just([])
+    }
+}
+
+fileprivate class ListIssuesPresenterOutputSpy: ListIssuesPresenterOutput {
+    var displayIssuesCalled: Bool = false
+    var issuesCount: Int = 0
+    func displayIssues(_ viewModel: ListIssues.FetchIssues.ViewModel) {
+        self.displayIssuesCalled = true
+        issuesCount = viewModel.numberOfItem
     }
 }
