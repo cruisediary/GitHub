@@ -13,4 +13,14 @@ struct ListIssues {
         var userName: String
         var repo: String
     }
+    
+    struct FetchIssues {
+        struct ViewModel {
+            var issues: [Issue]
+            var numberOfItem: Int { return issues.count }
+            func issue(at indexPath: IndexPath) -> Issue? {
+                return issues[safe: indexPath.item]
+            }
+        }
+    }
 }
