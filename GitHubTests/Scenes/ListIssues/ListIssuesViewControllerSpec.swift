@@ -39,7 +39,7 @@ class ListIssuesViewControllerSpec: QuickSpec {
             context("when fetch 10 items") {
                 let expectedNum = 10
                 beforeEach {
-                    sut.issues = IssueSeeder.generate(num: expectedNum)
+                    sut.viewModel = ListIssues.FetchIssues.ViewModel(issues: IssueSeeder.generate(num: expectedNum))
                     sut.state = .fetched
                 }
                 
