@@ -10,9 +10,13 @@ import UIKit
 
 import RxSwift
 
-protocol ListIssuesViewControllerInput {}
+protocol ListIssuesViewControllerInput {
+    func displayIssues(_ viewModel: ListIssues.FetchIssues.ViewModel)
+}
 
-protocol ListIssuesViewControllerOutput {}
+protocol ListIssuesViewControllerOutput {
+    func fetchIssues()
+}
 
 class ListIssuesViewController: UIViewController, ListIssuesViewControllerInput {
     var router: ListIssuesRouter!
@@ -27,11 +31,6 @@ class ListIssuesViewController: UIViewController, ListIssuesViewControllerInput 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    struct Constant {
-        static let userName = "Instagram"
-        static let repo = "IGListKit"
-    }
-    
     enum Section {
         static let number = 1
     }
@@ -42,15 +41,13 @@ class ListIssuesViewController: UIViewController, ListIssuesViewControllerInput 
         case networkError
     }
     
-    let disposeBag: DisposeBag = DisposeBag()
-
     var state: State = .fetching {
         didSet {
             collectionView.reloadData()
         }
     }
     
-    var issues: [Issue] = []
+    var viewModel = ListIssues.FetchIssues.ViewModel(issues: [])
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,19 +72,9 @@ class ListIssuesViewController: UIViewController, ListIssuesViewControllerInput 
         super.viewWillAppear(animated)
         self.navigationItem.title = "Issues"
         switch state {
-        case .fetching, .networkError: fetchIssues()
+        case .fetching, .networkError: output.fetchIssues()
         case .fetched: break
         }
-    }
-
-    func fetchIssues() {
-        let worker = IssuesWorker(service: IssuesService())
-        worker.fetchIssues(request: ListIssues.Request(userName: Constant.userName, repo: Constant.repo))
-        .subscribe { [weak self](event) in
-            guard let `self` = self, let issues = event.element else { return }
-            self.issues = issues
-            self.state = .fetched
-        }.addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,11 +85,18 @@ class ListIssuesViewController: UIViewController, ListIssuesViewControllerInput 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
+    
+    func displayIssues(_ viewModel: ListIssues.FetchIssues.ViewModel) {
+        DispatchQueue.main.async {
+            self.viewModel = viewModel
+            self.state = .fetched
+        }
+    }
 }
 
 extension ListIssuesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.item < issues.count, let id = issues[indexPath.item].id else { return }
+        guard let id = viewModel.issue(at: indexPath)?.id else { return }
         self.id = id
     }
 }
@@ -115,7 +109,9 @@ extension ListIssuesViewController: UICollectionViewDataSource {
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListIssueCell.reuseIdentifier, for: indexPath) as! ListIssueCell
-            cell.configure(issue: issues[indexPath.item])
+            if let issue = viewModel.issue(at: indexPath) {
+                cell.configure(issue: issue)
+            }
             return cell
         }
     }
@@ -123,11 +119,11 @@ extension ListIssuesViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return Section.number
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch state {
         case .fetching, .networkError: return 1
-        case .fetched: return issues.count
+        case .fetched: return viewModel.numberOfItem
         }
     }
 }

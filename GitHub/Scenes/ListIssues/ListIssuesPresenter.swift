@@ -8,11 +8,32 @@
 
 import UIKit
 
-protocol ListIssuesPresenterInput {}
+import RxSwift
 
-protocol ListIssuesPresenterOutput: class {}
+protocol ListIssuesPresenterInput {
+    func fetchIssues()
+}
+
+protocol ListIssuesPresenterOutput: class {
+    func displayIssues(_ viewModel: ListIssues.FetchIssues.ViewModel)
+}
 
 class ListIssuesPresenter: ListIssuesPresenterInput {
     weak var output: ListIssuesPresenterOutput!
     var id: Int = -1
+    let disposeBag: DisposeBag = DisposeBag()
+    
+    struct Constant {
+        static let userName = "Instagram"
+        static let repo = "IGListKit"
+    }
+    
+    func fetchIssues() {
+        let worker = IssuesWorker(service: IssuesService())
+        worker.fetchIssues(request: ListIssues.Request(userName: Constant.userName, repo: Constant.repo))
+            .subscribe { [weak self](event) in
+                guard let `self` = self, let issues = event.element else { return }
+                self.output.displayIssues(ListIssues.FetchIssues.ViewModel(issues: issues))
+            }.addDisposableTo(disposeBag)
+    }
 }
