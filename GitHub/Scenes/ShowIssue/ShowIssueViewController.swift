@@ -8,6 +8,8 @@
 
 import UIKit
 
+import RxSwift
+
 extension ShowIssueViewController: ShowIssueRouterDataSource {}
 
 extension ShowIssueViewController: ShowIssueRouterDataDestination {}
@@ -16,6 +18,24 @@ class ShowIssueViewController: UIViewController {
     static let segue = "ShowIssueScene"
     var router: ShowIssueRouter!
     var id: Int = -1
+    
+    enum State {
+        case fetching
+        case fetched
+        case networkError
+    }
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    let disposeBag: DisposeBag = DisposeBag()
+    
+    var state: State = .fetching {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
+    var issue: Issue?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,16 +57,25 @@ class ShowIssueViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension ShowIssueViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 0
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        return cell
+    }
+}
 
+extension ShowIssueViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .zero
+    }
 }

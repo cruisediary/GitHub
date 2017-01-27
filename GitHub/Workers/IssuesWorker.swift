@@ -10,7 +10,7 @@ import UIKit
 
 import RxSwift
 
-final class IssuesWorker {
+class IssuesWorker {
     let service: IssuesServiceProtocol
     init(service: IssuesServiceProtocol) {
         self.service = service
