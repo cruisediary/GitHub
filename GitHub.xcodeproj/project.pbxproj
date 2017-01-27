@@ -51,6 +51,8 @@
 		4C8A1F7C1E2B333300F4F1B5 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F7B1E2B333300F4F1B5 /* GitHubTests.swift */; };
 		4C8A1F871E2B333300F4F1B5 /* UITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8A1F861E2B333300F4F1B5 /* UITestCase.swift */; };
 		4CA242491E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA242481E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift */; };
+		4CA2424B1E3B40E400BC0BEC /* ListIssuesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2424A1E3B40E400BC0BEC /* ListIssuesPresenter.swift */; };
+		4CA2424D1E3B411800BC0BEC /* ListIssuesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA2424C1E3B411800BC0BEC /* ListIssuesConfigurator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,8 @@
 		4C8A1F861E2B333300F4F1B5 /* UITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestCase.swift; sourceTree = "<group>"; };
 		4C8A1F881E2B333300F4F1B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA242481E3B3FAA00BC0BEC /* ShowIssuesViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowIssuesViewControllerSpec.swift; path = Scenes/ShowIssuesViewControllerSpec.swift; sourceTree = "<group>"; };
+		4CA2424A1E3B40E400BC0BEC /* ListIssuesPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesPresenter.swift; path = Scenes/ListIssues/ListIssuesPresenter.swift; sourceTree = "<group>"; };
+		4CA2424C1E3B411800BC0BEC /* ListIssuesConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListIssuesConfigurator.swift; path = Scenes/ListIssues/ListIssuesConfigurator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +237,8 @@
 				4C251AD41E2B3C3A00346DFA /* ListIssuesViewController.swift */,
 				4C7BB4C61E2BB93900F8BD63 /* ListIssuesRouter.swift */,
 				4C7BB4CA1E2BC1AB00F8BD63 /* ListIssuesModel.swift */,
+				4CA2424A1E3B40E400BC0BEC /* ListIssuesPresenter.swift */,
+				4CA2424C1E3B411800BC0BEC /* ListIssuesConfigurator.swift */,
 			);
 			name = ListIssues;
 			sourceTree = "<group>";
@@ -563,10 +569,12 @@
 				4C7BB4CD1E2BC1D700F8BD63 /* ShowIssueModel.swift in Sources */,
 				4C8A1F671E2B333300F4F1B5 /* AppDelegate.swift in Sources */,
 				4C251ADF1E2B4A3D00346DFA /* Issue.swift in Sources */,
+				4CA2424B1E3B40E400BC0BEC /* ListIssuesPresenter.swift in Sources */,
 				4C7BB4C31E2BB7C200F8BD63 /* ShowIssueViewController.swift in Sources */,
 				4C19B2E41E2B557B009B8D0E /* IssuesWorker.swift in Sources */,
 				4C7BB4C91E2BBB4600F8BD63 /* ShowIssueRouter.swift in Sources */,
 				4C19B2F01E2B70B9009B8D0E /* User.swift in Sources */,
+				4CA2424D1E3B411800BC0BEC /* ListIssuesConfigurator.swift in Sources */,
 				4C7BB4C71E2BB93900F8BD63 /* ListIssuesRouter.swift in Sources */,
 				4C251AE41E2B4B7800346DFA /* IssuesService.swift in Sources */,
 				4C19B2F71E2B78E4009B8D0E /* DateHelper.swift in Sources */,

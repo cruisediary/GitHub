@@ -10,12 +10,13 @@ import UIKit
 
 import RxSwift
 
-extension ListIssuesViewController: ListIssuesRouterDataSource {}
+protocol ListIssuesViewControllerInput {}
 
-extension ListIssuesViewController: ListIssuesRouterDataDestination {}
+protocol ListIssuesViewControllerOutput {}
 
-class ListIssuesViewController: UIViewController {
+class ListIssuesViewController: UIViewController, ListIssuesViewControllerInput {
     var router: ListIssuesRouter!
+    var output: ListIssuesViewControllerOutput!
     
     var id: Int = -1 {
         didSet {
@@ -53,7 +54,7 @@ class ListIssuesViewController: UIViewController {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        router = ListIssuesRouter(viewController: self, dataSource: self, dataDestination: self)
+        ListIssuesConfigurator.sharedInstance.configure(self)
     }
     
     override func viewDidLoad() {
@@ -72,6 +73,7 @@ class ListIssuesViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationItem.title = "Issues"
         switch state {
         case .fetching, .networkError: fetchIssues()
         case .fetched: break
@@ -80,7 +82,7 @@ class ListIssuesViewController: UIViewController {
 
     func fetchIssues() {
         let worker = IssuesWorker(service: IssuesService())
-        worker.fetchIssues(request: FetchIssues.Request(userName: Constant.userName, repo: Constant.repo))
+        worker.fetchIssues(request: ListIssues.Request(userName: Constant.userName, repo: Constant.repo))
         .subscribe { [weak self](event) in
             guard let `self` = self, let issues = event.element else { return }
             self.issues = issues
