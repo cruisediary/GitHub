@@ -10,13 +10,17 @@ import UIKit
 
 import RxSwift
 
-final class IssuesWorker {
+class IssuesWorker {
     let service: IssuesServiceProtocol
     init(service: IssuesServiceProtocol) {
         self.service = service
     }
     
-    func fetchIssues(request: FetchIssues.Request) -> Observable<[Issue]> {
+    func fetchIssue(request: ShowIssue.Request) -> Observable<Issue> {
+        return service.fetchIssue(request: request)
+    }
+    
+    func fetchIssues(request: ListIssues.Request) -> Observable<[Issue]> {
         return service.fetchIssues(request: request)
     }
 }

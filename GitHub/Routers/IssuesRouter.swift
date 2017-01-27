@@ -12,15 +12,18 @@ import Alamofire
 
 enum IssuesRouter: URLRequestConvertible {
     static let baseURL = "https://api.github.com/repos/"
-    case fetchIssues(request: FetchIssues.Request)
+    case fetchIssue(request: ShowIssue.Request)
+    case fetchIssues(request: ListIssues.Request)
 }
 
 extension IssuesRouter {
     func asURLRequest() throws -> URLRequest {
         let result: (path: String, method: Alamofire.HTTPMethod, parameters: [String: AnyObject]) = {
             switch self {
+            case .fetchIssue(let request):
+                return (request.url, .get, [String: AnyObject]())
             case .fetchIssues(let request):
-                return ("\(request.userName)/\(request.repo)/issues", .get, [String: AnyObject]())
+                return (request.url, .get, [String: AnyObject]())
             }
         }()
         
@@ -30,5 +33,17 @@ extension IssuesRouter {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         
         return try URLEncoding.default.encode(request, with: result.parameters)
+    }
+}
+
+extension ShowIssue.Request {
+    fileprivate var url: String {
+        return "\(userName)/\(repo)/issues/\(number)/"
+    }
+}
+
+extension ListIssues.Request {
+    fileprivate var url: String {
+        return "\(userName)/\(repo)/issues"
     }
 }

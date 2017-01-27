@@ -14,18 +14,34 @@ import ObjectMapper
 import RxSwift
 
 protocol IssuesServiceProtocol {
-    func fetchIssues(request: FetchIssues.Request) -> Observable<[Issue]>
-}
-
-struct FetchIssues {
-    struct Request {
-        var userName: String
-        var repo: String
-    }
+    func fetchIssue(request: ShowIssue.Request) -> Observable<Issue>
+    func fetchIssues(request: ListIssues.Request) -> Observable<[Issue]>
 }
 
 class IssuesService: IssuesServiceProtocol {
-    func fetchIssues(request: FetchIssues.Request) -> Observable<[Issue]> {
+    func fetchIssue(request: ShowIssue.Request) -> Observable<Issue> {
+        return Observable.create({ (observer) -> Disposable in
+            let request = Alamofire.request(IssuesRouter.fetchIssue(request: request)).responseJSON(completionHandler: { (response) in
+                
+                switch response.result {
+                case .success:
+                    if let json = response.result.value as? [String: Any],
+                        let issue = Mapper<Issue>().map(JSON: json) {
+                        observer.onNext(issue)
+                        observer.onCompleted()
+                    }
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            })
+            
+            return Disposables.create{
+                request.cancel()
+            }
+        })
+    }
+    
+    func fetchIssues(request: ListIssues.Request) -> Observable<[Issue]> {
         return Observable.create({ (observer) -> Disposable in
             let request = Alamofire.request(IssuesRouter.fetchIssues(request: request)).responseJSON(completionHandler: { (response) in
                 

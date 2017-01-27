@@ -29,16 +29,7 @@
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nzY-pk-lA8">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </view>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="oce-Nw-IfD" id="4lU-lY-3KS"/>
                                     <outlet property="delegate" destination="oce-Nw-IfD" id="2Gy-A9-dTC"/>
@@ -55,11 +46,20 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="GNt-Ha-TUQ" id="ahS-Rn-hLx"/>
+                        <segue destination="e4A-zo-zif" kind="show" identifier="ShowIssueScene" id="Ff4-dP-maG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nNY-IZ-3K2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-505" y="-490"/>
+        </scene>
+        <!--ShowIssueViewController-->
+        <scene sceneID="nvu-WZ-iPX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ShowIssue" referencedIdentifier="ShowIssueViewController" id="e4A-zo-zif" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azb-gg-pNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-491"/>
         </scene>
     </scenes>
 </document>
